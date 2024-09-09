@@ -1,30 +1,30 @@
 import { AppBar, Box, Button, createTheme, ThemeProvider, Toolbar, Typography } from '@mui/material'
 import React from 'react'
 
-const darktheme = createTheme({
+const darkTheme = createTheme({
   palette: {
     mode: "dark"
-  }
+  },
 })
 
 const Header = () => {
   return (
-    <ThemeProvider theme={darktheme}>
-       <AppBar>
+    <ThemeProvider theme={darkTheme}>
+      <AppBar sx={{mb:4}}>
         <Toolbar sx={{justifyContent:"space-between"}}>
           <Typography>
-            Tech Blogs
+            Tech Blog
           </Typography>
           <Box>
-            <Button>Home</Button>
-            <Button>About</Button>
-            <Button>Blog Categories</Button>
-            <Button>Contact</Button>
+            <Button color='inherit'>Home</Button>
+            <Button color='inherit'>About</Button>
+            <Button color='inherit'>Blog Categories</Button>
+            <Button color='inherit'>Contact</Button>
           </Box>
         </Toolbar>
-       </AppBar>
+     </AppBar>
     </ThemeProvider>
-   
+    
   )
 }
 
