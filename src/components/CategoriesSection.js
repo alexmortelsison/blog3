@@ -16,6 +16,12 @@ const darkTheme = createTheme({
       textAlign:'center',
       marginBottom: '20px'
     },
+    h4: {
+      fontSize: '1.2rem',
+      color: 'white',
+      marginBottom: '20px',
+      textAlign:'center',
+    },
   }
 })
 
@@ -46,16 +52,16 @@ const CategoriesSection = () => {
       <Grid container spacing={4}>
         {categories.map((category, index) => (
           <Grid item xs={12} sm={6} md={3} key={index}>
-            <Card>
-              <CardMedia
-                component='img'
+            <Card sx={{display:'flex', flexDirection:'column', backgroundColor:'#1e1e1e',}}>
+              <CardMedia 
+                component={'img'}
                 image={category.image}
                 alt={category.title}
-                sx={{height:140}}
-              >
+                height='100vh'
+                >
               </CardMedia>
               <CardContent>
-                <Typography>{category.title}</Typography>
+                <Typography variant='h4'>{category.title}</Typography>
               </CardContent>
             </Card>
           </Grid>
