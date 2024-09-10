@@ -10,13 +10,13 @@ const darkTheme = createTheme({
   typography: {
     h1: {
       fontSize: '3rem',
-      fontWeight: 'bolder',
-      color:'white'
+      color: 'white',
+      fontWeight: 'bolder'
     },
     h2: {
       fontSize: '1.5rem',
-      fontWeight: 'bolder',
-      color:'white'
+      color: 'white',
+      fontWeight: 'bolder'
     }
   }
 })
@@ -27,29 +27,35 @@ const HeroSection = () => {
       <Box 
         sx={{
           backgroundImage: `url(${backgroundImg})`,
-          height: '100vh',
-          backgroundPosition: 'center',
+          height:'100vh',
+          backgroundPosition:'center',
           backgroundSize: 'cover',
-          alignItems: 'center',
-          textAlign: 'center',
-          justifyContent: 'center',
-          display:'flex'
+          display:'flex',
+          alignItems:'center',
+          justifyContent:'center',
+          textAlign: 'center'
         }}>
-          <Box
+          <Box 
             sx={{
-              position: 'absolute',
+              backgroundColor:'rgba(0,0,0,0.7)',
               top: 0,
-              left: 0,
+              left:0,
+              position: 'absolute',
               height: '100%',
               width: '100%',
-              backgroundColor: 'rgba(0,0,0,0.7)',
               zIndex:1
-            }} >
+            }}>
           </Box>
-          <Container sx={{zIndex:2, position:'relative'}}>
-            <Typography variant='h1'>Stay Ahead with the Latest in Tech</Typography>
-            <Typography variant='h2' sx={{mt:2}}>Insights, Reviews, and Trends from the World of Technology</Typography>
-            <Button variant='contained' size='large' sx={{mt:5, fontWeight:'bold'}}>Explore Categories</Button>
+          <Container sx={{zIndex:2}}>
+            <Typography variant='h1' sx={{mb:3}}>
+              Stay Ahead with the Latest in Tech
+            </Typography>
+            <Typography variant='h2' sx={{mb:3}}>
+              Insights, Reviews, and Trends from the World of Technology
+            </Typography>
+            <Button variant='contained' size='large' sx={{fontWeight: 'bold', backgroundColor:'aqua'}}>
+              Explore Categories
+            </Button>
           </Container>
       </Box>
     </ThemeProvider>
