@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <AppBar>
-        <Toolbar sx={{justifyContent:'space-between'}}>
+        <Toolbar sx={{justifyContent:'space-between', mx:10}}>
           <Box sx={{display:'flex'}}>
             <Webhook sx={{color:'aqua'}}/>
             <Typography variant='h1'>Tech Blog</Typography>
