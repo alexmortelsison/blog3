@@ -1,39 +1,41 @@
-import { ThemeProvider } from '@emotion/react'
-import { AppBar, Box, Button, createTheme, Toolbar, Typography } from '@mui/material'
-import React from 'react'
-import { Webhook } from '@mui/icons-material'
+import React from 'react';
+import { AppBar, Toolbar, Typography, Button, Container, Box } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+// Define the dark theme
 const darkTheme = createTheme({
   palette: {
-    mode: 'dark'
+    mode: 'dark',
   },
   typography: {
-    h1: {
-      fontSize: '1.3rem',
-      fontWeight: 'bolder',
-    }
-  }
-})
+    h6: {
+      fontSize: '1.25rem',
+      fontWeight: 'bold',
+      color: '#fff',
+    },
+  },
+});
 
 const Header = () => {
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar sx={{mb:4}}>
+      <AppBar sx={{ mb: 4 }}>
         <Toolbar  sx={{ flexDirection: { xs: 'column', sm: 'row' }, justifyContent:'space-between'}}>
-          <Box sx={{display:'flex', color:'aqua'}}>
-            <Webhook></Webhook>
-            <Typography variant='h1'>Tech Blog</Typography>
+          <Box>
+            <Typography variant="h6">
+              Tech Blogs
+            </Typography>
           </Box>
-          <Box sx={{display:'flex'}}>
-            <Button variant='h1'>Home</Button>
-            <Button variant='h1'>About</Button>
-            <Button variant='h1'>Categories</Button>
-            <Button variant='h1'>Contact</Button>
+          <Box sx={{ display: 'flex'}}>
+            <Button >Home</Button>
+            <Button >About</Button>
+            <Button >Categories</Button>
+            <Button >Contact</Button>
           </Box>
         </Toolbar>
       </AppBar>
     </ThemeProvider>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
