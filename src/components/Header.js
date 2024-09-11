@@ -18,13 +18,13 @@ const darkTheme = createTheme({
 const Header = () => {
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar>
-        <Toolbar sx={{ justifyContent:'space-between'}}>
+      <AppBar sx={{mb:4}}>
+        <Toolbar  sx={{ px: { xs: 2, sm: 3, md: 5 }, flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'flex', sm: 'center' }, justifyContent:'space-between' , py:2}}>
           <Box sx={{display:'flex', color:'aqua'}}>
             <Webhook></Webhook>
             <Typography variant='h1'>Tech Blog</Typography>
           </Box>
-          <Box sx={{display:'flex', gap: 1}}>
+          <Box sx={{display:'flex'}}>
             <Button variant='h1'>Home</Button>
             <Button variant='h1'>About</Button>
             <Button variant='h1'>Categories</Button>
