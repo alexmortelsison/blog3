@@ -1,41 +1,44 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Container, Box } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@emotion/react'
+import { AppBar, Box, Button, createTheme, Toolbar, Typography } from '@mui/material'
+import React from 'react'
+import { WebhookTwoTone } from '@mui/icons-material'
 
-// Define the dark theme
 const darkTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: 'dark'
   },
   typography: {
-    h6: {
-      fontSize: '1.25rem',
-      fontWeight: 'bold',
-      color: '#fff',
+    h1: {
+      fontSize: '1.2rem',
+      fontWeight: 'bold'
     },
-  },
-});
+    button1: {
+      color:'white',
+      fontWeight: 'bold',
+      fontSize: '1.2rem',
+    }
+  }
+})
 
 const Header = () => {
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar sx={{ mb: 4 }}>
-        <Toolbar  sx={{ flexDirection: { xs: 'column', sm: 'row' }, justifyContent:'space-between'}}>
-          <Box>
-            <Typography variant="h6">
-              Tech Blogs
-            </Typography>
+      <AppBar sx={{mb:'10px'}}>
+        <Toolbar sx={{justifyContent: 'space-between', flexDirection:{xs: 'column', sm:'row'}}}>
+          <Box sx={{display: 'flex', mt: '20px'}}>
+            <WebhookTwoTone sx={{color: 'aqua',}}/>
+            <Typography variant='h1' sx={{color:'aqua'}}>Tech Blogs</Typography>
           </Box>
-          <Box sx={{ display: 'flex'}}>
-            <Button >Home</Button>
-            <Button >About</Button>
-            <Button >Categories</Button>
-            <Button >Contact</Button>
+          <Box sx={{mt: '20px'}}>
+            <Button variant='button1'>Home</Button>
+            <Button variant='button1'>About</Button>
+            <Button variant='button1'>Categories</Button>
+            <Button variant='button1'>Contact</Button>
           </Box>
         </Toolbar>
       </AppBar>
     </ThemeProvider>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
